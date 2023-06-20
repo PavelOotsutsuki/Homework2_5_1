@@ -6,6 +6,11 @@ public class SpawnGroup : MonoBehaviour
 {
     private Spawn[] _spawns;
 
+    private void Start()
+    {
+        _spawns = GetComponentsInChildren<Spawn>();
+    }
+
     public bool TryGetRandomSpawnPosition(out float x, out float y)
     {
         if (_spawns.Length <= 0)
@@ -21,10 +26,5 @@ public class SpawnGroup : MonoBehaviour
         y = _spawns[spawnIndex].transform.position.y;
 
         return true;
-    }
-
-    private void Start()
-    {
-        _spawns = GetComponentsInChildren<Spawn>();
     }
 }
