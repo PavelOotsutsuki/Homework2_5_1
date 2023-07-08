@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class SpawnGroup : MonoBehaviour
 {
-    private Spawn[] _spawns;
+    private SpawnEnemy[] _spawns;
 
-    private void Start()
+    private void Awake()
     {
-        _spawns = GetComponentsInChildren<Spawn>();
+        _spawns = GetComponentsInChildren<SpawnEnemy>();
     }
 
     public bool TryGetRandomSpawnPosition(out float x, out float y)
     {
+        Debug.Log(_spawns.Length);
+
         if (_spawns.Length <= 0)
         {
             x = 0;

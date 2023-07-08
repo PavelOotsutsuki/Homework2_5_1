@@ -22,22 +22,10 @@ public class Door : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out PersonMovement personMovement) && _isOpen == false)
         {
-            transform.localScale = new Vector3(Modul(transform.localScale.y / _openedDoorScaleCoefficient), transform.localScale.y);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.y / _openedDoorScaleCoefficient), transform.localScale.y);
             transform.Translate(transform.localScale.x * _boxCollider.size.x * -1 / 2 , 0, 0);
             _boxCollider.enabled = false;
             _isOpen = true;
-
         }
     }
-
-    private float Modul(float number)
-    {
-        if (number < 0)
-        {
-            return number * -1;
-        }
-
-        return number;
-    }
-
 }

@@ -14,8 +14,7 @@ public class AlarmTrigger : MonoBehaviour
     private AudioSource _audioSource;
     private float _startVolume;
     private float _maxVolume;
-    private Coroutine _upVolumeInJob;
-    private Coroutine _downVolumeInJob;
+    private Coroutine _volumeInJob;
     private float _duration;
 
     public bool IsReached { get; private set; }
@@ -41,12 +40,12 @@ public class AlarmTrigger : MonoBehaviour
             IsReached = true;
             _reached?.Invoke();
 
-            if (_downVolumeInJob != null)
+            if (_volumeInJob != null)
             {
-                StopCoroutine(_downVolumeInJob);
+                StopCoroutine(_volumeInJob);
             }
 
-            _upVolumeInJob =StartCoroutine(UpVolume(_duration));
+            _volumeInJob =StartCoroutine(UpVolume());
         }
     }
 
@@ -61,32 +60,22 @@ public class AlarmTrigger : MonoBehaviour
         {
             IsReached = false;
 
-            if (_upVolumeInJob != null)
+            if (_volumeInJob != null)
             {
-                StopCoroutine(_upVolumeInJob);
+                StopCoroutine(_volumeInJob);
             }
 
-            _downVolumeInJob = StartCoroutine(DownVolume(_duration));
+            _volumeInJob = StartCoroutine(DownVolume());
         }
     }
 
-    private IEnumerator UpVolume(float duration)
+    private IEnumerator UpVolume()
     {
-        for (float i = _countTimeVolume; i < duration; i += Time.deltaTime)
+        for (float i = _countTimeVolume; i < _duration; i += Time.deltaTime)
         {
             _countTimeVolume = i + Time.deltaTime;
 
-            if (_countTimeVolume<0)
-            {
-                _countTimeVolume = 0;
-            }
-
-            if (_countTimeVolume > duration)
-            {
-                _countTimeVolume = duration;
-            }
-
-            _audioSource.volume = Mathf.MoveTowards(_startVolume, _maxVolume, i / duration);
+            ChangeVolume(i);
 
             yield return true;
         }
@@ -94,28 +83,33 @@ public class AlarmTrigger : MonoBehaviour
         _audioSource.volume = _maxVolume;
     }
 
-    private IEnumerator DownVolume(float duration)
+    private IEnumerator DownVolume()
     {
         for (float i = _countTimeVolume; i > 0; i -= Time.deltaTime)
         {
             _countTimeVolume = i - Time.deltaTime;
 
-            if (_countTimeVolume < 0)
-            {
-                _countTimeVolume = 0;
-            }
-
-            if (_countTimeVolume > duration)
-            {
-                _countTimeVolume = duration;
-            }
-
-            _audioSource.volume = Mathf.MoveTowards(_startVolume, _maxVolume, i / duration);
+            ChangeVolume(i);
 
             yield return true;
         }
 
         _audioSource.volume = _startVolume;
         _gone?.Invoke();
+    }
+
+    private void ChangeVolume(float countTimeVolume)
+    {
+        if (_countTimeVolume < 0)
+        {
+            _countTimeVolume = 0;
+        }
+
+        if (_countTimeVolume > _duration)
+        {
+            _countTimeVolume = _duration;
+        }
+
+        _audioSource.volume = Mathf.MoveTowards(_startVolume, _maxVolume, countTimeVolume / _duration);
     }
 }

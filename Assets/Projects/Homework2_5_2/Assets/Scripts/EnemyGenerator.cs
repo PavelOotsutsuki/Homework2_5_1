@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour
 {
-    [SerializeField] private Enemy _enemy;
+    [SerializeField] private EnemyPatrol _enemy;
     [SerializeField] private SpawnGroup _spawnGroup;
 
     private void Start()
@@ -26,7 +26,7 @@ public class EnemyGenerator : MonoBehaviour
                 break;
             }
                
-            Enemy createdEnemy = Instantiate(_enemy, new Vector3(xPosition, yPosition,0), Quaternion.identity);
+            EnemyPatrol createdEnemy = Instantiate(_enemy, new Vector3(xPosition, yPosition,0), Quaternion.identity);
             yield return wait;
         }
     }
