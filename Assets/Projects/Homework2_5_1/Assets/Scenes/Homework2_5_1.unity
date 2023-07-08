@@ -459,6 +459,7 @@ GameObject:
   - component: {fileID: 570617260}
   - component: {fileID: 570617259}
   - component: {fileID: 570617258}
+  - component: {fileID: 570617262}
   m_Layer: 0
   m_Name: AlarmTrigger
   m_TagString: Untagged
@@ -615,60 +616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e98137b727245d8813ebc0d71f691c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reached:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1788425802}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 570617258}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _gone:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1788425802}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 570617258}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!212 &570617261
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -721,6 +668,72 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &570617262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570617256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179a6cecb2c074ac8a147d0801b59e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1788425803}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 570617258}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _gone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1788425803}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 570617258}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &671796041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8301887515965485169, guid: b29ea7c75d2ed4776ae583a91c586afc, type: 3}
@@ -1229,7 +1242,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5351044563623132758, guid: 75153164daf624216b2d22da3a1825c2, type: 3}
   m_PrefabInstance: {fileID: 1836399338}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1788425802 stripped
+--- !u!198 &1788425803 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 5383032007849312915, guid: 75153164daf624216b2d22da3a1825c2, type: 3}
   m_PrefabInstance: {fileID: 1836399338}
