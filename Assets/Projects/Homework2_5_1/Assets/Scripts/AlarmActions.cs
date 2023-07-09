@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
-[RequireComponent(typeof(AlarmTrigger))]
 
 public class AlarmActions : MonoBehaviour
 {
@@ -17,44 +16,37 @@ public class AlarmActions : MonoBehaviour
     private float _maxVolume;
     private Coroutine _volumeInJob;
     private float _duration;
-    private AlarmTrigger _alarmTrigger;
-    private bool _lastReached;
 
     private void Start()
     {
         _countTimeVolume = 0;
         _audioSource = GetComponent<AudioSource>();
-        _alarmTrigger = GetComponent<AlarmTrigger>();
         _startVolume = 0;
         _maxVolume = 1f;
         _duration = 10;
-        _lastReached = false;
     }
 
-    private void Update()
+    public void StartUpVolume()
     {
-        if (_alarmTrigger.IsReached == true && _lastReached != _alarmTrigger.IsReached)
+        _reached?.Invoke();
+
+        StopOldCoroutine();
+
+        _volumeInJob = StartCoroutine(UpVolume());
+    }
+
+    public void StartDownVolume()
+    {
+        StopOldCoroutine();
+
+        _volumeInJob = StartCoroutine(DownVolume());
+    }
+
+    private void StopOldCoroutine()
+    {
+        if (_volumeInJob != null)
         {
-            _reached?.Invoke();
-
-            if (_volumeInJob != null)
-            {
-                StopCoroutine(_volumeInJob);
-            }
-
-            _lastReached = _alarmTrigger.IsReached;
-            _volumeInJob = StartCoroutine(UpVolume());
-        }
-
-        if (_alarmTrigger.IsReached == false && _lastReached != _alarmTrigger.IsReached)
-        {
-            if (_volumeInJob != null)
-            {
-                StopCoroutine(_volumeInJob);
-            }
-
-            _lastReached = _alarmTrigger.IsReached;
-            _volumeInJob = StartCoroutine(DownVolume());
+            StopCoroutine(_volumeInJob);
         }
     }
 
