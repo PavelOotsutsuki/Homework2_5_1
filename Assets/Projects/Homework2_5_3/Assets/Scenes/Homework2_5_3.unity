@@ -1834,6 +1834,90 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 26272592}
     m_Modifications:
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _endGame.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _reached.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _colorSetter.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _endGame.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _reached.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _endGame.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 591234031}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _reached.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4471439828843567062}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _colorSetter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _endGame.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _reached.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _colorSetter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4471439828843567062}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _endGame.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DestroyAllEnemies
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _reached.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Change
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _colorSetter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _colorSetter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Change
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _endGame.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Enemies, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _reached.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TargetColorSetter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _colorSetter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TargetColorSetter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _endGame.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _reached.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: -3925597932293515625, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+      propertyPath: _colorSetter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4015088503964548324, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
       propertyPath: m_Name
       value: Finish
@@ -1884,6 +1968,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+--- !u!114 &4471439828843567062 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7093119971637731222, guid: 6effaa764a64f4621bef5bde9e5d7da2, type: 3}
+  m_PrefabInstance: {fileID: 4471439828843567061}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cad29cb57f3b4d97bc010ee875c6712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5562272145202400501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1753760096378024334, guid: b7133743e0bf14c10ba3ae22963a68c8, type: 3}

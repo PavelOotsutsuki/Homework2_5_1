@@ -15,6 +15,8 @@ public class Enemies : MonoBehaviour
 
     public void DestroyAllEnemies()
     {
+        Debug.Log("Hello!");
+
         while (_destroyCounter < _enemies.Length)
         {
             Destroy(_enemies[_destroyCounter++].gameObject);

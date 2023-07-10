@@ -16,20 +16,20 @@ public class ApplesGenerator : MonoBehaviour
         _applesLevelGenerators[_counter++].enabled = true;
     }
 
-    private void Update()
+    public void CheckLastApple()
     {
         int applesCount = GetComponentsInChildren<Apple>().Length;
 
         if (_counter < _applesLevelGenerators.Length)
         {
-            if (applesCount == 0)
+            if (applesCount <= 1)
             {
                 _applesLevelGenerators[_counter++].enabled = true;
             }
         }
-        else if (applesCount == 0)
+        else if (applesCount <= 1)
         {
-            _finish.IsEnable = true;
+            _finish.OnIsEnable();
         }
     }
 }

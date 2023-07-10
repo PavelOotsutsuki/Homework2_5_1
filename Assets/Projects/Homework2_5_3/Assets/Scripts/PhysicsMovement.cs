@@ -9,15 +9,15 @@ using UnityEngine;
 
 public class PhysicsMovement : MonoBehaviour
 {
+    private const float MinMoveDistance = 0.001f;
+    private const float ShellRadius = 0.01f;
+
     [SerializeField] private float _minGroundNormalY = .65f;
     [SerializeField] private float _gravityModifier = 1f;
     [SerializeField] private Vector2 _velocity;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpForce;
-
-    private const float _minMoveDistance = 0.001f;
-    private const float _shellRadius = 0.01f;
 
     private bool _flipX;
     private Vector2 _targetVelocity;
@@ -95,9 +95,9 @@ public class PhysicsMovement : MonoBehaviour
     {
         float distance = move.magnitude;
 
-        if (distance > _minMoveDistance)
+        if (distance > MinMoveDistance)
         {
-            int count = _rigidbody2D.Cast(move, _contactFilter, _hitBuffer, distance + _shellRadius);
+            int count = _rigidbody2D.Cast(move, _contactFilter, _hitBuffer, distance + ShellRadius);
 
             _hitBufferList.Clear();
 
@@ -127,7 +127,7 @@ public class PhysicsMovement : MonoBehaviour
                     _velocity = _velocity - projection * currentNormal;
                 }
 
-                float modifiedDistance = _hitBufferList[i].distance - _shellRadius;
+                float modifiedDistance = _hitBufferList[i].distance - ShellRadius;
                 distance = modifiedDistance < distance ? modifiedDistance : distance;
             }
         }

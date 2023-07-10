@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer))]
 
@@ -8,29 +9,36 @@ public class Finish : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
 
-    public bool IsEnable { get; set; }
-    public bool IsSuccess { get; private set; }
+    public bool _isEnable;
+
+    [SerializeField] private UnityEvent _endGame = new UnityEvent();
+    [SerializeField] private UnityEvent _colorSetter = new UnityEvent();
 
     private void Start()
     {
-        IsEnable = false;
+        _isEnable = false;
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        if (IsEnable)
+        if (_isEnable)
         {
-            _spriteRenderer.color = new Color(255, 255, 255, 255);
+            _colorSetter?.Invoke();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out Player player) && IsEnable)
+        if (collision.TryGetComponent(out Player player) && _isEnable)
         {
-            IsSuccess = true;
+            _endGame?.Invoke();
             Debug.Log("Success!");
         }
+    }
+
+    public void OnIsEnable()
+    {
+        _isEnable = true;
     }
 }
